@@ -15,9 +15,18 @@ app.get("/about", (req, res) => {
     res.render("about.ejs");
 })
 
-app.post("/createpost", (req, res) => {
-    res.render("createpost.ejs")
+app.get("/contact", (req, res) => {
+    res.render("contact.ejs");
 })
+
+app.get("/createposts", (req, res) => {
+    res.render("createposts.ejs");
+})
+
+app.post("/submit", (req, res) => {
+    res.send(req.body.postInput)
+})
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}.`);
