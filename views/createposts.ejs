@@ -1,0 +1,27 @@
+<body>
+<%- include("partials/header.ejs") %>
+<form id="form" action="/submit" method="POST">
+    <!--  Name Input -->
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control border border-dark-subtle" id="floatingPassword" placeholder="Name">
+        <label for="nameInput">Name</label>
+      </div>
+
+      <!--  Age Input -->
+<div class="form-floating">
+    <input type="number" class="form-control border border-dark-subtle" id="floatingInput" placeholder="Age">
+    <label for="ageInput">Age</label>
+  </div>
+
+  <!--  Post Input -->
+  <div id="textarea" class="form-control mt-5 py-4 px-4 border border-dark-subtle">
+    <label for="postInput"> </label>
+    <textarea id="postInput" name="postInput" class="form-control border border-dark-subtle" aria-label="With textarea"></textarea>
+  </div>
+
+  <input type="submit" class="btn btn-dark mt-3" />
+</form>
+
+  
+<%- include("partials/footer.ejs") %>
+</body>
