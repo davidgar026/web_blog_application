@@ -1,15 +1,15 @@
 <body>
 <%- include("partials/header.ejs") %>
-<form id="form" action="/submit" method="POST">
+<form id="form" name="form" action="/submit" method="POST">
     <!--  Name Input -->
     <div class="form-floating mb-3">
-        <input type="text" class="form-control border border-dark-subtle" id="floatingPassword" placeholder="Name">
+        <input id="floatingPassword" name="nameInput" type="text" class="form-control border border-dark-subtle"  placeholder="Name">
         <label for="nameInput">Name</label>
       </div>
 
       <!--  Age Input -->
 <div class="form-floating">
-    <input type="number" class="form-control border border-dark-subtle" id="floatingInput" placeholder="Age">
+    <input id="floatingInput" name="ageInput" type="number" class="form-control border border-dark-subtle"  placeholder="Age">
     <label for="ageInput">Age</label>
   </div>
 
@@ -18,8 +18,10 @@
     <label for="postInput"> </label>
     <textarea id="postInput" name="postInput" class="form-control border border-dark-subtle" aria-label="With textarea"></textarea>
   </div>
-
+  
   <input type="submit" class="btn btn-dark mt-3" />
+
+
 </form>
 
   
