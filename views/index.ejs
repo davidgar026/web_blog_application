@@ -1,8 +1,9 @@
 <%- include("partials/header.ejs") %>
-
-  <% for(let i=0; i < locals.data.length; i++){ %>
+<!---->
+  <% for(let i=0; i < locals.postArr.length; i++){ %>
     <div id="formDiv">
-      <article class="border border-dark-subtle rounded"><%= locals.data[i] %></article>
+      <article class="border border-dark-subtle rounded"><%= locals.postArr[i] %> <br><div id="byAuthor">by <%= locals.nameData %> <%= locals.ageData %></div></article>
+      
       <a id="editBtn" class="btn btn-dark mt-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Edit</a>  
       <a id="deleteBtn" class="btn btn-dark mt-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Delete</a>  
     </div>

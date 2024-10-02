@@ -44,11 +44,14 @@ body{
 article{
     width:1000px;
     padding:40px;
+    white-space: pre-wrap;
 }
 
 #formDiv{
     margin-bottom:50px;
 }
 
-#deleteBtn{
+#byAuthor{
+    margin-top:50px;
+    font-weight:bold;
 }
