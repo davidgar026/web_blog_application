@@ -1,14 +1,60 @@
 <%- include("partials/header.ejs") %>
-<!---->
-  <% for(let i=0; i < locals.postArr.length; i++){ %>
-    <div id="formDiv">
-      <article class="border border-dark-subtle rounded"><%= locals.postArr[i] %> <br><div id="byAuthor">by <%= locals.nameData %> <%= locals.ageData %></div></article>
+
+ 
       
-      <a id="editBtn" class="btn btn-dark mt-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Edit</a>  
-      <a id="deleteBtn" class="btn btn-dark mt-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Delete</a>  
-    </div>
+      
+      
+
+
+
+      <!--
+      
+      <a id="deleteBtn" href="/deletepost" class="btn btn-dark mt-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Delete</a>  
+      
+      -->
+      
+    <% locals.postArr.forEach((item, index) => { %>
+
+      <div id="formDiv">
+
+
+        <article class="border border-dark-subtle rounded"><%= locals.postArr[index] %> <br><div id="byAuthor"> - <%= locals.nameArr[index] %> <%= locals.ageArr[index] %> </div></article>
+        
+        <div id="buttons">
+
+          <form id="editBtn" action = "/editpost" method="POST">
+            <input type="hidden" name="index" value=" <%= index %>" />
+            <button type="submit" class="btn btn-dark mt-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Edit</button>
+          </form>
+
+          <!--
+          
+          <a id="editBtn" class="btn btn-dark mt-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Edit</a>  
+          
+          -->
+
+        <form id="deleteBtn" action = "/deletepost" method="POST">
+          <input type="hidden" name="index" value=" <%= index %>" />
+          <button type="submit" class="btn btn-dark mt-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Delete</button>
+        </form>
+
+        </div>
+        
+        
+
+      </div>
+
+    <% }) %>
+
+
     
-    
-  <% }%>
+
+
+
+
+
+
+
 
 <%- include("partials/footer.ejs") %>
+

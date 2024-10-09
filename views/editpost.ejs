@@ -1,0 +1,17 @@
+<body>
+    <%- include("partials/header.ejs") %>
+<form id="form" name="form" action="/submit" method="POST">
+    
+  <!--  Post Input -->
+  <div id="textarea" class="form-control mt-5 py-4 px-4 border border-dark-subtle">
+    <label for="postInput"> </label>
+    <textarea id="postInput" name="postInput" class="form-control border border-dark-subtle" aria-label="With textarea"></textarea>
+  </div>
+  <input type="submit" class="btn btn-dark mt-3" />
+
+</form>
+
+  
+<%- include("partials/footer.ejs") %>
+
+</body>

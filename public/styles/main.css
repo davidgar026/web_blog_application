@@ -49,9 +49,19 @@ article{
 
 #formDiv{
     margin-bottom:50px;
+    
 }
 
 #byAuthor{
     margin-top:50px;
     font-weight:bold;
+}
+
+#editBtn{
+    margin-right:10px;
+}
+
+#buttons{
+    display:flex;
+    
 }

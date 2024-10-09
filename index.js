@@ -1,12 +1,18 @@
 import express from "express";
 import bodyParser from "body-parser";
+import EventEmitter from "node:events";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 3000;
 let postArr = [];
-var postData;
-var nameData;
-var ageData;
+let nameArr = [];
+let ageArr = [];
+var nameInp;
+var ageInp;
+var postInp;
 
 app.use(bodyParser.urlencoded({extended: true }));
 app.use(express.static("public"));
@@ -17,8 +23,8 @@ app.get("/", (req, res) => {
         {
 
             postArr,
-            nameData,
-            ageData
+            nameArr,
+            ageArr,
 
         }
     );
@@ -36,22 +42,39 @@ app.get("/createposts", (req, res) => {
     res.render("createposts.ejs");
 })
 
-app.post("/submit", (req, res, next) => {
-    let postInput = req.body.postInput;
-    let nameInput = req.body.nameInput;
-    let ageInput = req.body.ageInput;
-    postData = postInput;
-    nameData = nameInput;
-    ageData = ageInput;
-    postArr.push(postInput);
-    res.redirect('/')
-    //res.render("index.ejs", {data: postArr})
-    
-    
-    
-    
-    //postArr = [];
+app.post("/deletepost", (req, res) => {
+    const itemIndex = req.body.index; // Get the index from the form
+    postArr.splice(itemIndex, 1); // Remove the item at the specified index
+    res.redirect('/'); // Redirect back to index.ejs
 })
+
+app.post("/submit", (req, res) => {
+    const newPost = req.body.postInput;
+    const newName = req.body.nameInput;
+    const newAge = req.body.ageInput;
+    if(newPost){
+        postArr.push(newPost);
+        nameArr.push(newName);
+        ageArr.push(newAge);
+    }
+    res.redirect('/')
+})
+
+
+
+app.patch("/editpost", (req, res) => {
+    const updates = req.body;
+    const newPost = req.body.postInput;
+    const newName = req.body.nameInput;
+    const newAge = req.body.ageInput;
+    
+    if(newPost){
+        postArr.push(newPost);
+    }
+    res.redirect('/')
+})
+
+
 
 
 app.listen(port, () => {
