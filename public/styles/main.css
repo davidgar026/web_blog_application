@@ -65,3 +65,20 @@ article{
     display:flex;
     
 }
+
+#home_h1{
+    margin-bottom:50px;
+}
+
+#home_article{
+    width:1000px;
+    padding:40px;
+    font-size:25px;
+}
+
+#home_article p{
+}
+
+#home_article ul{
+
+}
