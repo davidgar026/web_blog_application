@@ -8,25 +8,43 @@ body{
     min-height:100vh;
 }
 
-.main-content{
-    display:flex;
-}
+
+
 
 #sidebar{
     position:fixed;
 }
 
+.main-content{
+    display:flex;
+    flex-direction:column;
+    height: 100%;
+    
+}
+
+
+
+footer{
+    position:fixed;
+    bottom:0;
+}
+
+footer p{
+    margin:11px;
+    
+}
+
 #contentBesidesSidebar{
-    margin-left:390px;
-    margin-top:170px;
-    margin-right:300px;
+    padding-top:150px;
     width:100vw;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    /* border:3px solid red; */
+    height:100%;
+    
 }
+
 
 #floatingInput, #floatingPassword{
     width:100%;
@@ -34,10 +52,13 @@ body{
 
 #form{
     width:800px;
+    
+    
 }
 
 #postInput{
     height:30%;
+    
 }
 
 
@@ -45,6 +66,7 @@ article{
     width:1000px;
     padding:40px;
     white-space: pre-wrap;
+    
 }
 
 #formDiv{
@@ -76,9 +98,3 @@ article{
     font-size:25px;
 }
 
-#home_article p{
-}
-
-#home_article ul{
-
-}
